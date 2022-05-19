@@ -14,7 +14,7 @@ const App = () =>{
 
   const [arry,setArry] = useState(new Array(7).fill(0));
   const [index,setIndex] = useState(Math.floor(Math.random()*7));
-  const [largest,setLargest] = useState(anecdotes[index]);
+  const [largest,setLargest] = useState(index);
 
   const nextAnecdote =()=>{
 
@@ -29,7 +29,7 @@ const App = () =>{
     setArry(copy)
     console.log(arry);
 ;
-    setLargest(anecdotes[arry.indexOf(Math.max.apply(null,arry))])
+    setLargest(arry.indexOf(Math.max.apply(null,arry)))
   }
   
   
@@ -41,7 +41,8 @@ const App = () =>{
       <button onClick={Vote}>vote</button>
       <button onClick={nextAnecdote}>next anecdote</button>
       <h1>Anecdote with most votes</h1>
-      <p>{largest}</p>
+      <p>{anecdotes[largest]}</p>
+      <p> has {arry[largest]} votes</p>
     </div>
   )
     
