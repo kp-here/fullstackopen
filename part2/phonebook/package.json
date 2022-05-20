@@ -14,7 +14,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "json-server -p3001 --watch db.json"
+    "server": "json-server -p3001 --watch db.json",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [

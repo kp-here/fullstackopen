@@ -1,5 +1,5 @@
 import axios from "axios"
-const baseUrl = 'http://localhost:3001/api/persons'
+const baseUrl = '/api/persons'
 const Get = ()=> axios.get(baseUrl).then(res=>res.data)
 
 const Post = newItem=> axios.post(baseUrl,newItem).then(res=>res.data)
