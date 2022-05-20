@@ -1,0 +1,94 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "content": "HTML is easy",
+      "date": "2022-1-17T17:30:31.098Z",
+      "important": false
+    },
+    {
+      "id": 2,
+      "content": "Browser can execute only JavaScript",
+      "date": "2022-1-17T18:39:34.091Z",
+      "important": false
+    },
+    {
+      "id": 3,
+      "content": "GET and POST are the most important methods of HTTP protocol",
+      "date": "2022-1-17T19:20:14.298Z",
+      "important": false
+    },
+    {
+      "id": 4,
+      "content": "hey hey hey",
+      "date": "2022-05-19T18:08:31.333Z",
+      "important": false
+    },
+    {
+      "id": 5,
+      "content": "yo babe",
+      "date": "2022-05-19T18:09:01.043Z",
+      "important": false
+    },
+    {
+      "id": 6,
+      "content": "heylo",
+      "date": "2022-05-19T18:12:00.524Z",
+      "important": false
+    },
+    {
+      "id": 7,
+      "content": "yasyas",
+      "date": "2022-05-19T18:13:19.204Z",
+      "important": false
+    },
+    {
+      "id": 8,
+      "content": "a new note",
+      "date": "2022-05-20T05:01:36.423Z",
+      "important": false
+    },
+    {
+      "id": 9,
+      "content": "testNote",
+      "date": "2022-05-20T05:11:21.973Z",
+      "important": true
+    },
+    {
+      "id": 10,
+      "content": "a new note",
+      "date": "2022-05-20T05:48:55.340Z",
+      "important": false
+    },
+    {
+      "id": 11,
+      "content": "testingnote",
+      "date": "2022-05-20T05:52:21.365Z",
+      "important": false
+    },
+    {
+      "id": 13,
+      "content": "sample",
+      "date": "2022-05-20T07:31:46.112Z",
+      "important": false
+    },
+    {
+      "id": 14,
+      "content": "a new note",
+      "date": "2022-05-20T14:41:40.898Z",
+      "important": false
+    },
+    {
+      "id": 15,
+      "content": "keerthi",
+      "date": "2022-05-20T14:42:16.427Z",
+      "important": true
+    },
+    {
+      "id": 16,
+      "content": "sessss",
+      "date": "2022-05-20T14:53:07.665Z",
+      "important": false
+    }
+  ]
+}
