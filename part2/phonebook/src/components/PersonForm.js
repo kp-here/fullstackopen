@@ -1,7 +1,7 @@
 /*eslint eqeqeq:0*/
 import AxiosHelper from "./AxiosHelper"
 
-const PersonForm = ({persons,setPersons,newName,setNewName,setNewNumber,newNumber}) => {
+const PersonForm = ({persons,setPersons,newName,setNewName,newNumber,setNewNumber,setMessage,setClassname}) => {
 
     const handleChangeName = (e)=>{
         setNewName(e.target.value)
@@ -17,15 +17,28 @@ const PersonForm = ({persons,setPersons,newName,setNewName,setNewNumber,newNumbe
                     name:newName,
                     number:newNumber
                 }
-                AxiosHelper.Put(persons.find(n=>n.name==newName).id,newPerson).then(r=>{
+                AxiosHelper.Put(persons.find(n=>n.name==newName).id,newPerson)
+                .then(r=>{
                     const newList = [...persons]
                     newList.find(n=>n.name==newName).number=newNumber
                     setPersons(newList)
                     setNewName('')
                     setNewNumber('')
+                    setClassname('message')
+                    setMessage(`${newName}'s phone number is updated`)
+                    setTimeout(()=>{
+                        setMessage(null)
+                    },3000)
                 })
+                .catch(err=>{
+                    setClassname('error')
+                    setMessage(`Information of ${newName} has already beem removed from the server`)
+                    setTimeout(()=>{
+                        setMessage(null)
+                    },3000)
+                    }
+                )
             }
-
         }
         else{
             const newPerson = {
@@ -37,6 +50,12 @@ const PersonForm = ({persons,setPersons,newName,setNewName,setNewNumber,newNumbe
                 setNewName('')
                 setNewNumber('')
             })  
+            setClassname('message')
+            setMessage(`Added ${newName}`)
+            setTimeout(()=>{
+                setMessage(null)
+            },3000)
+
         }
     }
     return(
