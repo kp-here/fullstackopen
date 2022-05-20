@@ -1,3 +1,6 @@
+/*eslint eqeqeq:0*/
+import AxiosHelper from "./AxiosHelper"
+
 const PersonForm = ({persons,setPersons,newName,setNewName,setNewNumber,newNumber}) => {
 
     const handleChangeName = (e)=>{
@@ -9,12 +12,31 @@ const PersonForm = ({persons,setPersons,newName,setNewName,setNewNumber,newNumbe
     const handleSubmit = (e)=>{
         e.preventDefault()
         if(persons.map(p=>p.name).includes(newName)){
-            alert(`${newName} is already added to the phonebook`)
+            if(window.confirm(`${newName} is already added to the phonebook, replace the old number with a new one?`)){
+                const newPerson = {
+                    name:newName,
+                    number:newNumber
+                }
+                AxiosHelper.Put(persons.find(n=>n.name==newName).id,newPerson).then(r=>{
+                    const newList = [...persons]
+                    newList.find(n=>n.name==newName).number=newNumber
+                    setPersons(newList)
+                    setNewName('')
+                    setNewNumber('')
+                })
+            }
+
         }
         else{
-            setPersons(persons.concat({name:newName,number:newNumber}))
-            setNewName('')
-            setNewNumber('')
+            const newPerson = {
+                name:newName,
+                number:newNumber
+            }
+            AxiosHelper.Post(newPerson).then(r=>{
+                setPersons(persons.concat(r))
+                setNewName('')
+                setNewNumber('')
+            })  
         }
     }
     return(
